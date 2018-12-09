@@ -1,0 +1,27 @@
+.picture-item {
+  .picture-item-box {
+    opacity: .95;
+    background-color: $secondary;
+    color: $primary;
+  }
+  .picture-item-img {}
+  .picture-item-description {}
+  @media (min-width: 992px) {
+    .picture-item-title {
+      position: relative;
+      z-index: 1;
+      margin-bottom: -3rem;
+    }
+    .picture-item-img {
+      position: relative;
+      z-index: 0;
+      max-width: 60vw;
+    }
+    .picture-item-description {
+      position: relative;
+      z-index: 1;
+      margin-top: -3rem;
+      max-width: 50vw;
+    }
+  }
+}
