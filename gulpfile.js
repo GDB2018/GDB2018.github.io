@@ -28,7 +28,7 @@ gulp.task('vendor', function() {
     .pipe(gulp.dest('./vendor/bootstrap'))
 
   // jQuery
-  gulp.src([
+  return gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
@@ -53,7 +53,7 @@ gulp.task('css:compile', function() {
 });
 
 // Minify CSS
-gulp.task('css:minify', ['css:compile'], function() {
+gulp.task('css:minify', gulp.series('css:compile', function() {
   return gulp.src([
       './css/*.css',
       '!./css/*.min.css'
@@ -64,13 +64,13 @@ gulp.task('css:minify', ['css:compile'], function() {
     }))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
-});
+}));
 
 // CSS
-gulp.task('css', ['css:compile', 'css:minify']);
+gulp.task('css', gulp.series('css:compile', 'css:minify'));
 
 // Default task
-gulp.task('default', ['css', 'vendor']);
+gulp.task('default', gulp.series('css', 'vendor'));
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -82,7 +82,7 @@ gulp.task('browserSync', function() {
 });
 
 // Dev task
-gulp.task('dev', ['css', 'browserSync'], function() {
-  gulp.watch('./scss/*.scss', ['css']);
+gulp.task('dev', gulp.series('css', 'browserSync', function() {
+  gulp.watch('./scss/*.scss', gulp.series('css'));
   gulp.watch('./*.html', browserSync.reload);
-});
+}));

@@ -1,13 +1,13 @@
 /*!
  * Start Bootstrap - Business Casual v5.0.0 (https://startbootstrap.com/template-overviews/business-casual)
- * Copyright 2013-2018 Start Bootstrap
+ * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
  */
 
 body {
   font-family: 'Lora';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, 0.45))), url("../img/before_after_1.jpg");
-  background: linear-gradient(rgba(20, 20, 20, 0.45)), url("../img/before_after_1.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, 0.45))), url("../img/beforeAfter1.jpg");
+  background: linear-gradient(rgba(20, 20, 20, 0.45)), url("../img/beforeAfter1.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -71,6 +71,24 @@ p {
   font-weight: 400;
 }
 
+.section-heading .label-text {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .section-heading .label-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .section-heading .label-text {
+    font-size: 3rem;
+  }
+}
+
 .section-heading .section-heading-phone {
   display: block;
   font-size: 3rem;
@@ -80,6 +98,16 @@ p {
 
 .bg-faded {
   background-color: rgba(255, 255, 255, 0.85);
+}
+
+.bg-faded-dark {
+  opacity: .95;
+  background-color: #202020;
+  color: #bdbdbd;
+}
+
+.fb-max-width {
+  max-width: 600px;
 }
 
 #mainNav {
@@ -261,6 +289,12 @@ p {
 
 .footer {
   background-color: rgba(32, 32, 32, 0.9);
+}
+
+.work-heading .work-heading-content .work-box {
+  opacity: .95;
+  background-color: #202020;
+  color: #bdbdbd;
 }
 
 .text-primary {
